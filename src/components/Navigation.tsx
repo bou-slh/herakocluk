@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 interface NavigationProps {
   isScrolled: boolean;
@@ -7,13 +8,16 @@ interface NavigationProps {
 
 export default function Navigation({ isScrolled }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const navLinks = [
-    { href: '#ana-sayfa', label: 'Ana Sayfa' },
-    { href: '#paketler', label: 'Paketlerimiz' },
-    { href: '#hakkimizda', label: 'Hakkımızda' },
-    { href: '#sertifikalar', label: 'Sertifikalar' },
-    { href: '#iletisim', label: 'İletişim' },
+    { href: isHomePage ? '#ana-sayfa' : '/#ana-sayfa', label: 'Ana Sayfa', isHash: true },
+    { href: isHomePage ? '#paketler' : '/#paketler', label: 'Paketlerimiz', isHash: true },
+    { href: '/fiyatlar', label: 'Fiyatlar', isHash: false },
+    { href: isHomePage ? '#hakkimizda' : '/#hakkimizda', label: 'Hakkımızda', isHash: true },
+    { href: isHomePage ? '#sertifikalar' : '/#sertifikalar', label: 'Sertifikalar', isHash: true },
+    { href: isHomePage ? '#iletisim' : '/#iletisim', label: 'İletişim', isHash: true },
   ];
 
   return (
@@ -24,22 +28,32 @@ export default function Navigation({ isScrolled }: NavigationProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <a
-            href="#ana-sayfa"
+          <Link
+            to="/"
             className="font-pacifico text-2xl sm:text-3xl text-gold hover:text-gold/80 transition-colors"
           >
             Hera Koçluk
-          </a>
+          </Link>
 
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-cream hover:text-gold transition-colors duration-200 text-sm lg:text-base"
-              >
-                {link.label}
-              </a>
+              link.isHash ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-cream hover:text-gold transition-colors duration-200 text-sm lg:text-base"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-cream hover:text-gold transition-colors duration-200 text-sm lg:text-base"
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
           </div>
 
@@ -57,14 +71,25 @@ export default function Navigation({ isScrolled }: NavigationProps) {
         <div className="md:hidden bg-navy border-t border-gold/30">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block text-cream hover:text-gold transition-colors duration-200 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </a>
+              link.isHash ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block text-cream hover:text-gold transition-colors duration-200 py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="block text-cream hover:text-gold transition-colors duration-200 py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
           </div>
         </div>

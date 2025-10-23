@@ -1,13 +1,33 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import Packages from './components/Packages';
-import About from './components/About';
-import Certificates from './components/Certificates';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import Fiyatlar from './pages/Fiyatlar';
 
-function App() {
+function ScrollHandler() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const scrollTo = params.get('scroll');
+
+    if (scrollTo) {
+      setTimeout(() => {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  return null;
+}
+
+function AppContent() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -21,14 +41,22 @@ function App() {
 
   return (
     <div className="min-h-screen bg-cream">
+      <ScrollHandler />
       <Navigation isScrolled={isScrolled} />
-      <Hero />
-      <Packages />
-      <About />
-      <Certificates />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/fiyatlar" element={<Fiyatlar />} />
+      </Routes>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const packages = [
   {
@@ -96,12 +97,12 @@ export default function Packages() {
                 ))}
               </ul>
 
-              <a
-                href="#iletisim"
+              <Link
+                to="/fiyatlar"
                 className="block w-full text-center bg-navy text-cream py-3 rounded-lg hover:bg-navy/90 transition-colors duration-200 font-semibold shadow-md hover:shadow-lg"
               >
                 Hemen Başla
-              </a>
+              </Link>
             </div>
           ))}
         </div>
