@@ -16,44 +16,50 @@ export default function Navigation({ isScrolled }: NavigationProps) {
     { href: isHomePage ? '#paketler' : '/#paketler', label: 'Paketlerimiz', isHash: true },
     { href: '/fiyatlar', label: 'Fiyatlar', isHash: false },
     { href: isHomePage ? '#hakkimizda' : '/#hakkimizda', label: 'Hakkımızda', isHash: true },
-    { href: isHomePage ? '#sertifikalar' : '/#sertifikalar', label: 'Sertifikalar', isHash: true },
+    // { href: isHomePage ? '#sertifikalar' : '/#sertifikalar', label: 'Sertifikalar', isHash: true },
     { href: isHomePage ? '#iletisim' : '/#iletisim', label: 'İletişim', isHash: true },
   ];
 
   return (
-    <nav
+     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-navy shadow-lg' : 'bg-navy/90 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+  <div className="flex justify-between items-center h-20">
           <Link
             to="/"
-            className="font-pacifico text-2xl sm:text-3xl text-gold hover:text-gold/80 transition-colors"
+            className="flex items-center gap-5 sm:gap-6 font-pacifico text-2xl sm:text-3xl text-gold hover:text-gold/80 transition-colors"
+            aria-label="Hera Koçluk ana sayfa"
           >
-            Hera Koçluk
+            {/* Logo image served from public/hera.jpg */}
+            {/* Prefer a transparent PNG logo if available, fall back to the existing JPG */}
+            <img
+              src={'/hera.png'}
+              alt="Hera Koçluk logo"
+              className="w-auto h-auto max-h-20 object-contain"
+              style={{ display: 'block' }}
+              loading="lazy"
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                if (target.src.endsWith('/hera.png')) target.src = '/hera.jpg';
+              }}
+            />
+
+            <span>Hera Koçluk</span>
           </Link>
 
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              link.isHash ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-cream hover:text-gold transition-colors duration-200 text-sm lg:text-base"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="text-cream hover:text-gold transition-colors duration-200 text-sm lg:text-base"
-                >
-                  {link.label}
-                </Link>
-              )
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-cream hover:text-gold transition-colors duration-200 text-sm lg:text-base"
+              >
+                {link.label}
+              </a>
             ))}
           </div>
 
