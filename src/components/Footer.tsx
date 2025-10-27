@@ -74,11 +74,11 @@ export default function Footer() {
                 info@herakocluk.com
               </a>
               <a
-                href="tel:+905XXXXXXXXX"
+                href="tel:+905515332633"
                 className="flex items-center gap-2 text-cream/70 hover:text-gold transition-colors text-sm"
               >
                 <Phone size={16} />
-                +90 (5XX) XXX XX XX
+                +90 (551) 533 26 33
               </a>
             </div>
           </div>
@@ -110,11 +110,11 @@ export default function Footer() {
                 <Instagram size={20} className="text-cream/70 group-hover:text-gold transition-colors" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-cream/10 hover:bg-gold/20 rounded-full flex items-center justify-center transition-all duration-300 group"
-                aria-label="Twitter"
+                aria-label="x"
               >
                 <Twitter size={20} className="text-cream/70 group-hover:text-gold transition-colors" />
               </a>
