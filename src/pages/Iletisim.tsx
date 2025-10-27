@@ -57,7 +57,7 @@ export default function Iletisim() {
   };
 
   const handleInstagramClick = () => {
-    window.open('https://instagram.com', '_blank');
+    window.open('https://www.instagram.com/herakocluk?igsh=dTBnMWJjeHd3eGQ1&utm_source=qr', '_blank');
   };
 
   const handleCallClick = () => {
@@ -276,7 +276,7 @@ export default function Iletisim() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <button
               onClick={handleWhatsAppClick}
-              className="flex flex-col items-center justify-center gap-4 bg-green-500 hover:bg-green-600 text-white p-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="flex flex-col items-center justify-center gap-4 bg-gold hover:bg-gold/90 text-navy p-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <MessageCircle size={48} />
               <span className="font-semibold text-lg">WhatsApp</span>
@@ -284,7 +284,7 @@ export default function Iletisim() {
 
             <button
               onClick={handleInstagramClick}
-              className="flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="flex flex-col items-center justify-center gap-4 bg-gold hover:bg-gold/90 text-navy p-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Instagram size={48} />
               <span className="font-semibold text-lg">Instagram</span>
@@ -300,7 +300,7 @@ export default function Iletisim() {
 
             <button
               onClick={handleEmailClick}
-              className="flex flex-col items-center justify-center gap-4 bg-blue-500 hover:bg-blue-600 text-white p-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="flex flex-col items-center justify-center gap-4 bg-gold hover:bg-gold/90 text-navy p-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Mail size={48} />
               <span className="font-semibold text-lg">E-posta</span>
