@@ -14,20 +14,17 @@ export default function About() {
             </div>
 
             <p className="text-lg text-cream/90 leading-relaxed">
-              Hera Koçluk olarak, öğrencilerimizin akademik hedeflerine ulaşmaları için
-              bireysel ihtiyaçlarına özel, profesyonel ve etkili koçluk hizmetleri sunuyoruz.
+              Hera Koçluk olarak, öğrencilerimizin akademik hedeflerine ulaşmalarını sağlamak için bireysel ihtiyaçlarına özel, profesyonel ve etkili koçluk hizmetleri sunuyoruz.
             </p>
 
             <p className="text-lg text-cream/90 leading-relaxed">
-              Deneyimli koçlarımız ve alanında uzman öğretmenlerimizle, YKS, DGS, YDS, IELTS
-              ve TOEFL gibi kritik sınavlara hazırlanan öğrencilere rehberlik ederek başarı
-              oranlarını maksimuma çıkarıyoruz.
+              Deneyimli koçlarımız ve alanında uzman öğretmenlerimizle; LGS, YKS, YDS, IELTS ve TOEFL gibi kritik sınavlara hazırlanan öğrencilerimize rehberlik ediyor, başarı oranlarını en üst seviyeye taşıyoruz.
             </p>
 
             <p className="text-lg text-cream/90 leading-relaxed">
-              Sadece akademik başarıya değil, aynı zamanda öğrencilerimizin kişisel gelişimine
-              de önem veriyor, motivasyon ve disiplin kazandırarak hedeflerine ulaşmalarını
-              sağlıyoruz.
+             Sadece akademik başarıya değil, aynı zamanda öğrencilerimizin kişisel gelişimine de önem veriyoruz.
+Motivasyon, disiplin ve doğru planlama alışkanlıkları kazandırarak hedeflerine istikrarlı bir şekilde ulaşmalarını sağlıyoruz.
+
             </p>
 
             <div className="grid grid-cols-2 gap-6 pt-4">
@@ -55,9 +52,9 @@ export default function About() {
                 <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
                   <TrendingUp className="text-gold" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gold">Kanıtlanmış Başarı</h3>
+                <h3 className="text-xl font-semibold text-gold">Sürekli Takip ve Destek</h3>
                 <p className="text-cream/80 text-sm">
-                  Yüksek başarı oranları ve memnuniyet
+                  Motivasyonun sürekliliği
                 </p>
               </div>
 
@@ -67,7 +64,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-semibold text-gold">Prestijli Hizmet</h3>
                 <p className="text-cream/80 text-sm">
-                  Akademik lüks ve kaliteli eğitim
+                 Güncel ve Güvenilir Kaynaklar
                 </p>
               </div>
             </div>
@@ -81,7 +78,7 @@ export default function About() {
                   <div>
                     <h4 className="text-xl font-semibold text-cream mb-1">Vizyon</h4>
                     <p className="text-cream/80">
-                      Türkiye'nin en prestijli akademik koçluk platformu olmak
+                      Türkiye’de öğrencilerin hedeflerine emin adımlarla ilerleyebileceği güvenilir bir koçluk platformu olmayı hedefliyoruz
                     </p>
                   </div>
                 </div>

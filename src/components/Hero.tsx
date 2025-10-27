@@ -6,14 +6,13 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-snugget" style={{ lineHeight: '1.2' }}>
               Hedefine Ulaşmak İçin{' '}
-              <span className="text-gold">Doğru Adrestesin</span>
+              <span className="text-gold">Doğru Yerdesin</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-navy/80 leading-relaxed">
-              YKS, DGS, YDS, IELTS ve TOEFL gibi sınavlara hazırlanırken profesyonel koçlarımız
-              ve uzman öğretmenlerimizle kişiselleştirilmiş eğitim programlarıyla başarıya ulaşın.
+             LGS, YKS, YDS, IELTS ve TOEFL gibi sınavlara hazırlanırken; uzman koçlarımız, yenilikçi sistemimiz ve kişiselleştirilmiş çalışma programlarımızla hedefinin her adımında yanındayız.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -58,7 +57,7 @@ export default function Hero() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/hera.jpg"
+                src="/herap.png"
                 alt="Hera Koçluk"
                 className="w-full h-auto object-cover"
               />

@@ -8,18 +8,19 @@ const packages = [
     features: [
       'Ücretsiz seviye tespit sınavı ve analizi',
       'Haftalık deneme analizleri',
-      'YKS için aylık ebeveyn raporu',
+      'Koç ile Düzenli check-in',
+      'YKS ve LGS için aylık ebeveyn raporu',
       'Haftalık ders çalışma programı',
-      'Gelişim takibi + aylık detaylı rapor',
+      'aylık detaylı rapor',
     ],
   },
   {
     title: 'Destek Paketi',
     color: 'from-gold/40 to-gold/20',
     features: [
-      'Temel paketin tüm içerikleri',
+      'Rehberlik paketin tüm içerikleri',
       'Ayda 2 özel ders',
-      '4 ders materyal desteği',
+      'Temel materyal desteği',
     ],
     popular: true,
   },
@@ -27,21 +28,21 @@ const packages = [
     title: 'Mentorluk Paketi',
     color: 'from-navy/20 to-navy/10',
     features: [
-      'Temel paketin tüm içerikleri',
+      'Rehberlik paketin tüm içerikleri',
       'Haftada bir özel ders',
-      'Tüm materyaller dahil',
       'Haftada bir gün soru çözüm desteği',
+      'Kapsamlı materyal desteği',
     ],
   },
   {
     title: 'Koçluk Paketi',
     color: 'from-gold/60 to-gold/30',
     features: [
-      'Temel paketin tüm içerikleri',
-      'Koç analizine göre ihtiyaca yönelik özel ders',
-      'Tüm materyaller dahil',
-      'Haftada üç gün soru çözüm desteği',
+     'Rehberlik paketin tüm içerikleri',
+      'İhtiyaca yönelik soru çözüm desteği',
       'Her gün belirli saatlerde koç ile birebir iletişim',
+      'Koçun analizine göre ihtiyaca yönelik limitsiz özel ders',
+      'Tam materyal desteği',
     ],
     premium: true,
   },
@@ -64,7 +65,7 @@ export default function Packages() {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`relative bg-gradient-to-br ${pkg.color} rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-beige/30 ${
+              className={`relative flex flex-col min-h-[360px] h-full bg-gradient-to-br ${pkg.color} rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-beige/30 ${
                 pkg.premium ? 'lg:scale-105' : ''
               }`}
             >
@@ -99,7 +100,7 @@ export default function Packages() {
 
               <Link
                 to="/fiyatlar"
-                className="block w-full text-center bg-navy text-cream py-3 rounded-lg hover:bg-navy/90 transition-colors duration-200 font-semibold shadow-md hover:shadow-lg"
+                className="mt-auto block w-full text-center bg-navy text-cream py-3 rounded-lg hover:bg-navy/90 transition-colors duration-200 font-semibold shadow-md hover:shadow-lg"
               >
                 Hemen Başla
               </Link>

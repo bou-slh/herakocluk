@@ -27,7 +27,7 @@ export default function Contact() {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/905XXXXXXXXX', '_blank');
+    window.open('https://wa.me/905515332633', '_blank');
   };
 
   return (
@@ -54,7 +54,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-cream font-semibold mb-1">Telefon</h4>
-                    <p className="text-cream/80">+90 (5XX) XXX XX XX</p>
+                    <p className="text-cream/80">+90 (551) 533 26 33</p>
                   </div>
                 </div>
 

@@ -10,14 +10,14 @@ interface PriceRow {
 
 interface ExamPricing {
   title: string;
-  emoji: string;
+  
   data: PriceRow[];
 }
 
 const pricingData: ExamPricing[] = [
   {
     title: 'YKS KOÇLUK PAKETLERİ',
-    emoji: '🧠',
+    
     data: [
       { paket: 'Rehberlik Paket', sure: '1 Ay', fiyat: '4.000', icerik: 'Haftalık plan + deneme analizi + rapor' },
       { paket: 'Rehberlik Paket', sure: '3 Ay', fiyat: '10.000', icerik: 'Gelişim takibi + ebeveyn raporu' },
@@ -35,7 +35,6 @@ const pricingData: ExamPricing[] = [
   },
   {
     title: 'YDS KOÇLUK PAKETLERİ',
-    emoji: '📘',
     data: [
       { paket: 'Rehberlik Paket', sure: '1 Ay', fiyat: '3.500', icerik: 'Seviye tespit + haftalık analiz' },
       { paket: 'Rehberlik Paket', sure: '3 Ay', fiyat: '9.000', icerik: 'Planlama + kaynak önerisi' },
@@ -53,7 +52,6 @@ const pricingData: ExamPricing[] = [
   },
   {
     title: 'IELTS KOÇLUK PAKETLERİ',
-    emoji: '🌍',
     data: [
       { paket: 'Rehberlik Paket', sure: '1 Ay', fiyat: '4.000', icerik: 'Seviye tespit + 4 skills planı' },
       { paket: 'Rehberlik Paket', sure: '3 Ay', fiyat: '10.500', icerik: 'Task planlama + practice takip' },
@@ -71,7 +69,6 @@ const pricingData: ExamPricing[] = [
   },
   {
     title: 'TOEFL KOÇLUK PAKETLERİ',
-    emoji: '🇺🇸',
     data: [
       { paket: 'Rehberlik Paket', sure: '1 Ay', fiyat: '4.500', icerik: 'Skill analizi + planlama' },
       { paket: 'Rehberlik Paket', sure: '3 Ay', fiyat: '11.000', icerik: 'Grammar + essay temeli' },
@@ -89,7 +86,6 @@ const pricingData: ExamPricing[] = [
   },
   {
     title: 'LGS KOÇLUK PAKETLERİ',
-    emoji: '🧩',
     data: [
       { paket: 'Rehberlik Paket', sure: '1 Ay', fiyat: '3.000', icerik: 'Haftalık plan + deneme takibi' },
       { paket: 'Rehberlik Paket', sure: '3 Ay', fiyat: '8.000', icerik: 'Gelişim raporu + veli bilgilendirme' },
@@ -113,7 +109,7 @@ function PricingTable({ exam }: { exam: ExamPricing }) {
   return (
     <div className="mb-16">
       <h3 className="text-3xl font-bold text-navy mb-8 flex items-center gap-3">
-        <span className="text-4xl">{exam.emoji}</span>
+        
         {exam.title}
       </h3>
       <p className="text-navy/70 mb-6 text-sm">

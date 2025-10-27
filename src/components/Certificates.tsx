@@ -1,27 +1,27 @@
 import { Award, Star, GraduationCap, Trophy } from 'lucide-react';
 
-const certifications = [
-  {
-    icon: Award,
-    title: 'Ulusal Eğitim Sertifikası',
-    description: 'Milli Eğitim Bakanlığı onaylı eğitim programları',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Akademik Koçluk Sertifikası',
-    description: 'Uluslararası koçluk standartlarına uygun sertifikasyon',
-  },
-  {
-    icon: Star,
-    title: 'Mükemmellik Ödülü',
-    description: 'Öğrenci memnuniyeti ve başarı oranlarında liderlik',
-  },
-  {
-    icon: Trophy,
-    title: 'Başarı Garantisi',
-    description: '%95 üzeri öğrenci başarı oranı',
-  },
-];
+// const certifications = [
+//   {
+//     icon: Award,
+//     title: 'Ulusal Eğitim Sertifikası',
+//     description: 'Milli Eğitim Bakanlığı onaylı eğitim programları',
+//   },
+//   {
+//     icon: GraduationCap,
+//     title: 'Akademik Koçluk Sertifikası',
+//     description: 'Uluslararası koçluk standartlarına uygun sertifikasyon',
+//   },
+//   {
+//     icon: Star,
+//     title: 'Mükemmellik Ödülü',
+//     description: 'Öğrenci memnuniyeti ve başarı oranlarında liderlik',
+//   },
+//   {
+//     icon: Trophy,
+//     title: 'Başarı Garantisi',
+//     description: '%95 üzeri öğrenci başarı oranı',
+//   },
+// ];
 
 const testimonials = [
   {
@@ -32,7 +32,7 @@ const testimonials = [
   },
   {
     name: 'Mehmet A.',
-    exam: 'DGS 2024',
+    exam: 'LGS 2024',
     quote: 'Özel ders sistemi ve düzenli takip programı sayesinde başarıyı yakaladım.',
     rating: 5,
   },
@@ -48,16 +48,16 @@ export default function Certificates() {
   return (
     <section id="sertifikalar" className="py-20 bg-gradient-to-br from-cream to-beige/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-navy mb-4">
             Sertifikalar & Başarılar
           </h2>
           <p className="text-lg text-navy/70 max-w-2xl mx-auto">
             Kalite ve başarı odaklı yaklaşımımızın tescilli kanıtları
           </p>
-        </div>
+        </div> */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {certifications.map((cert, index) => {
             const Icon = cert.icon;
             return (
@@ -77,7 +77,7 @@ export default function Certificates() {
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         <div className="mt-16">
           <h3 className="text-3xl font-bold text-navy text-center mb-12">
