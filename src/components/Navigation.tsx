@@ -17,7 +17,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
     { href: '/fiyatlar', label: 'Fiyatlar', isHash: false },
     { href: isHomePage ? '#hakkimizda' : '/#hakkimizda', label: 'Hakkımızda', isHash: true },
     // { href: isHomePage ? '#sertifikalar' : '/#sertifikalar', label: 'Sertifikalar', isHash: true },
-    { href: isHomePage ? '#iletisim' : '/#iletisim', label: 'İletişim', isHash: true },
+    { href: '/iletisim', label: 'İletişim', isHash: false },
   ];
 
   return (

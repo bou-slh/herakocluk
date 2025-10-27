@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import Fiyatlar from './pages/Fiyatlar';
+import Iletisim from './pages/Iletisim';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -46,6 +47,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/fiyatlar" element={<Fiyatlar />} />
+        <Route path="/iletisim" element={<Iletisim />} />
       </Routes>
       <Footer />
     </div>

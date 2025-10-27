@@ -156,7 +156,7 @@ function PricingTable({ exam }: { exam: ExamPricing }) {
 
       <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
         <Link
-          to="/?scroll=iletisim"
+          to="/iletisim"
           className="inline-flex items-center justify-center px-6 py-3 bg-navy text-cream rounded-lg hover:bg-navy/90 transition-all duration-300 shadow-md hover:shadow-lg font-semibold"
         >
           Hemen Başvur
@@ -206,7 +206,7 @@ export default function Fiyatlar() {
               bizimle iletişime geçin.
             </p>
             <Link
-              to="/?scroll=iletisim"
+              to="/iletisim"
               className="inline-flex items-center justify-center px-8 py-4 bg-gold text-navy rounded-lg hover:bg-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold"
             >
               İletişime Geç
