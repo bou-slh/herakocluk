@@ -97,171 +97,201 @@ export default function Iletisim() {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 border border-beige/30 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-navy mb-8 text-center">İletişim Formu</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="fullName" className="block text-navy font-semibold mb-2">
-                  Ad Soyad
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  required
-                  value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
-                  placeholder="Adınız ve soyadınız"
-                />
-              </div>
+           <form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  onSubmit={handleSubmit}
+  className="space-y-6"
+>
+  {/* Hidden input needed by Netlify */}
+  <input type="hidden" name="form-name" value="contact" />
 
-              <div>
-                <label htmlFor="exam" className="block text-navy font-semibold mb-2">
-                  Hangi sınava hazırlanmak istiyorsunuz?
-                </label>
-                <select
-                  id="exam"
-                  required
-                  value={formData.exam}
-                  onChange={(e) => setFormData({ ...formData, exam: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
-                >
-                  <option value="">Seçiniz...</option>
-                  <option value="YKS">YKS</option>
-                  <option value="LGS">LGS</option>
-                  <option value="YDT">YDT</option>
-                  <option value="DGS">DGS</option>
-                  <option value="YDS">YDS</option>
-                  <option value="IELTS">IELTS</option>
-                  <option value="TOEFL">TOEFL</option>
-                  <option value="Diğer">Diğer</option>
-                </select>
-              </div>
+  {/* Optional honeypot field to prevent spam */}
+  <p hidden>
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
 
-              <div>
-                <label htmlFor="isStudent" className="block text-navy font-semibold mb-2">
-                  Öğrenci misiniz?
-                </label>
-                <select
-                  id="isStudent"
-                  required
-                  value={formData.isStudent}
-                  onChange={(e) => {
-                    setFormData({ ...formData, isStudent: e.target.value, studentGrade: '' });
-                  }}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
-                >
-                  <option value="">Seçiniz...</option>
-                  <option value="Evet">Evet</option>
-                  <option value="Hayır">Hayır</option>
-                </select>
-              </div>
+  {/* Ad Soyad */}
+  <div>
+    <label htmlFor="fullName" className="block text-navy font-semibold mb-2">
+      Ad Soyad
+    </label>
+    <input
+      type="text"
+      name="fullName"
+      id="fullName"
+      required
+      value={formData.fullName}
+      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+      className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
+      placeholder="Adınız ve soyadınız"
+    />
+  </div>
 
-              {formData.isStudent === 'Evet' && (
-                <div>
-                  <label htmlFor="studentGrade" className="block text-navy font-semibold mb-2">
-                    Hangi sınıftasınız?
-                  </label>
-                  <select
-                    id="studentGrade"
-                    required
-                    value={formData.studentGrade}
-                    onChange={(e) => setFormData({ ...formData, studentGrade: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
-                  >
-                    <option value="">Seçiniz...</option>
-                    <optgroup label="Ortaokul">
-                      <option value="5. Sınıf">5. Sınıf</option>
-                      <option value="6. Sınıf">6. Sınıf</option>
-                      <option value="7. Sınıf">7. Sınıf</option>
-                      <option value="8. Sınıf">8. Sınıf</option>
-                    </optgroup>
-                    <optgroup label="Lise">
-                      <option value="9. Sınıf">9. Sınıf</option>
-                      <option value="10. Sınıf">10. Sınıf</option>
-                      <option value="11. Sınıf">11. Sınıf</option>
-                      <option value="12. Sınıf">12. Sınıf</option>
-                    </optgroup>
-                  </select>
-                </div>
-              )}
+  {/* Hangi sınava */}
+  <div>
+    <label htmlFor="exam" className="block text-navy font-semibold mb-2">
+      Hangi sınava hazırlanmak istiyorsunuz?
+    </label>
+    <select
+      name="exam"
+      id="exam"
+      required
+      value={formData.exam}
+      onChange={(e) => setFormData({ ...formData, exam: e.target.value })}
+      className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
+    >
+      <option value="">Seçiniz...</option>
+      <option value="YKS">YKS</option>
+      <option value="LGS">LGS</option>
+      <option value="YDT">YDT</option>
+      <option value="DGS">DGS</option>
+      <option value="YDS">YDS</option>
+      <option value="IELTS">IELTS</option>
+      <option value="TOEFL">TOEFL</option>
+      <option value="Diğer">Diğer</option>
+    </select>
+  </div>
 
-              <div>
-                <label htmlFor="city" className="block text-navy font-semibold mb-2">
-                  Şehir
-                </label>
-                <select
-                  id="city"
-                  required
-                  value={formData.city}
-                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
-                >
-                  <option value="">Seçiniz...</option>
-                  {turkishCities.map((city) => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
-              </div>
+  {/* Öğrenci misiniz */}
+  <div>
+    <label htmlFor="isStudent" className="block text-navy font-semibold mb-2">
+      Öğrenci misiniz?
+    </label>
+    <select
+      name="isStudent"
+      id="isStudent"
+      required
+      value={formData.isStudent}
+      onChange={(e) => setFormData({ ...formData, isStudent: e.target.value, studentGrade: '' })}
+      className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
+    >
+      <option value="">Seçiniz...</option>
+      <option value="Evet">Evet</option>
+      <option value="Hayır">Hayır</option>
+    </select>
+  </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-navy font-semibold mb-2">
-                  Telefon Numarası
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
-                  placeholder="0555 555 55 55"
-                />
-              </div>
+  {formData.isStudent === 'Evet' && (
+    <div>
+      <label htmlFor="studentGrade" className="block text-navy font-semibold mb-2">
+        Hangi sınıftasınız?
+      </label>
+      <select
+        name="studentGrade"
+        id="studentGrade"
+        required
+        value={formData.studentGrade}
+        onChange={(e) => setFormData({ ...formData, studentGrade: e.target.value })}
+        className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
+      >
+        <option value="">Seçiniz...</option>
+        <optgroup label="Ortaokul">
+          <option value="5. Sınıf">5. Sınıf</option>
+          <option value="6. Sınıf">6. Sınıf</option>
+          <option value="7. Sınıf">7. Sınıf</option>
+          <option value="8. Sınıf">8. Sınıf</option>
+        </optgroup>
+        <optgroup label="Lise">
+          <option value="9. Sınıf">9. Sınıf</option>
+          <option value="10. Sınıf">10. Sınıf</option>
+          <option value="11. Sınıf">11. Sınıf</option>
+          <option value="12. Sınıf">12. Sınıf</option>
+        </optgroup>
+      </select>
+    </div>
+  )}
 
-              <div>
-                <label htmlFor="email" className="block text-navy font-semibold mb-2">
-                  E-posta Adresi
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
-                  placeholder="ornek@email.com"
-                />
-              </div>
+  {/* Şehir */}
+  <div>
+    <label htmlFor="city" className="block text-navy font-semibold mb-2">
+      Şehir
+    </label>
+    <select
+      name="city"
+      id="city"
+      required
+      value={formData.city}
+      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+      className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
+    >
+      <option value="">Seçiniz...</option>
+      {turkishCities.map((city) => (
+        <option key={city} value={city}>
+          {city}
+        </option>
+      ))}
+    </select>
+  </div>
 
-              <div>
-                <label htmlFor="message" className="block text-navy font-semibold mb-2">
-                  Mesajınız
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all resize-none"
-                  placeholder="Mesajınızı buraya yazın... (Opsiyonel)"
-                />
-              </div>
+  {/* Telefon */}
+  <div>
+    <label htmlFor="phone" className="block text-navy font-semibold mb-2">
+      Telefon Numarası
+    </label>
+    <input
+      type="tel"
+      name="phone"
+      id="phone"
+      required
+      value={formData.phone}
+      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+      className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
+      placeholder="0555 555 55 55"
+    />
+  </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-navy hover:bg-navy/90 disabled:bg-navy/50 text-cream py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-lg"
-              >
-                {isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
-              </button>
+  {/* E-posta */}
+  <div>
+    <label htmlFor="email" className="block text-navy font-semibold mb-2">
+      E-posta Adresi
+    </label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      required
+      value={formData.email}
+      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all"
+      placeholder="ornek@email.com"
+    />
+  </div>
 
-              {submitStatus === 'success' && (
-                <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center">
-                  <p className="font-semibold">Teşekkürler! En kısa sürede sizinle iletişime geçeceğiz.</p>
-                </div>
-              )}
-            </form>
+  {/* Mesaj */}
+  <div>
+    <label htmlFor="message" className="block text-navy font-semibold mb-2">
+      Mesajınız
+    </label>
+    <textarea
+      name="message"
+      id="message"
+      rows={5}
+      value={formData.message}
+      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+      className="w-full px-4 py-3 rounded-lg bg-white border border-beige/50 text-navy placeholder-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/50 transition-all resize-none"
+      placeholder="Mesajınızı buraya yazın... (Opsiyonel)"
+    />
+  </div>
+
+  <button
+    type="submit"
+    disabled={isSubmitting}
+    className="w-full bg-navy hover:bg-navy/90 disabled:bg-navy/50 text-cream py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-lg"
+  >
+    {isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
+  </button>
+
+  {submitStatus === 'success' && (
+    <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center">
+      <p className="font-semibold">Teşekkürler! En kısa sürede sizinle iletişime geçeceğiz.</p>
+    </div>
+  )}
+</form>
+
           </div>
         </div>
 
