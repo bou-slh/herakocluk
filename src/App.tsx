@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import Fiyatlar from './pages/Fiyatlar';
 import Iletisim from './pages/Iletisim';
+import CerezPolitikasi from './pages/CerezPolitikasi';
+import GizlilikPolitikasi from './pages/GizlilikPolitikasi';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -48,6 +50,8 @@ function AppContent() {
         <Route path="/" element={<HomePage />} />
         <Route path="/fiyatlar" element={<Fiyatlar />} />
         <Route path="/iletisim" element={<Iletisim />} />
+        <Route path="/cerez-politikasi" element={<CerezPolitikasi />} />
+        <Route path="/gizlilik-politikasi" element={<GizlilikPolitikasi />} />
       </Routes>
       <Footer />
     </div>

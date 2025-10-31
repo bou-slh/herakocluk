@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -86,9 +87,18 @@ export default function Footer() {
 
         <div className="border-t border-gold/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-cream/60 text-sm">
-              © {currentYear} Hera Koçluk. Tüm hakları saklıdır.
-            </p>
+            <div className="flex items-center flex-wrap gap-4 text-cream/60 text-sm">
+              <p>© {currentYear} Hera Koçluk. Tüm hakları saklıdır.</p>
+              <div className="flex items-center gap-4">
+                <Link to="/gizlilik-politikasi" className="hover:text-gold transition-colors">
+                  Gizlilik Politikası
+                </Link>
+                <span>•</span>
+                <Link to="/cerez-politikasi" className="hover:text-gold transition-colors">
+                  Çerez Politikası
+                </Link>
+              </div>
+            </div>
 
             <div className="flex gap-4">
               <a

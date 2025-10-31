@@ -19,7 +19,7 @@ const pricingData: ExamPricing[] = [
     title: 'YKS KOÇLUK PAKETLERİ',
     
     data: [
-      { paket: 'Rehberlik Paket', sure: '1 Ay', fiyat: '4.000', icerik: 'Haftalık plan + deneme analizi + rapor' },
+      { paket: 'Rehberlik Paket', sure: '1 Ay', fiyat: '4.000', icerik: 'Haftalık plan + deneme analizi + rapor + Gelişim takibi + Uzun dönem hedef takibi + ebeveyn raporu' },
       { paket: 'Rehberlik Paket', sure: '3 Ay', fiyat: '10.000', icerik: 'Gelişim takibi + ebeveyn raporu' },
       { paket: 'Rehberlik Paket', sure: '6 Ay', fiyat: '18.000', icerik: 'Uzun dönem hedef takibi' },
       { paket: 'Destek Paket', sure: '1 Ay', fiyat: '6.000', icerik: '2 özel ders + kısmi materyal' },
@@ -137,16 +137,28 @@ function PricingTable({ exam }: { exam: ExamPricing }) {
                   }`}
                 >
                   {rowIndex === 0 ? (
-                    <td
-                      className="px-6 py-4 font-bold text-navy border-r border-beige/30"
-                      rowSpan={packageRows.length}
-                    >
-                      {row.paket}
-                    </td>
-                  ) : null}
-                  <td className="px-6 py-4 text-navy/90 border-r border-beige/30">{row.sure}</td>
-                  <td className="px-6 py-4 text-gold font-bold border-r border-beige/30">{row.fiyat}</td>
-                  <td className="px-6 py-4 text-navy/80 text-sm">{row.icerik}</td>
+                    <>
+                      <td
+                        className="px-6 py-4 font-bold text-navy border-r border-beige/30"
+                        rowSpan={packageRows.length}
+                      >
+                        {row.paket}
+                      </td>
+                      <td className="px-6 py-4 text-navy/90 border-r border-beige/30">{row.sure}</td>
+                      <td className="px-6 py-4 text-gold font-bold border-r border-beige/30">{row.fiyat}</td>
+                      <td
+                        className="px-6 py-4 text-navy/80 text-sm border-r border-beige/30"
+                        rowSpan={packageRows.length}
+                      >
+                        {row.icerik}
+                      </td>
+                    </>
+                  ) : (
+                    <>
+                      <td className="px-6 py-4 text-navy/90 border-r border-beige/30">{row.sure}</td>
+                      <td className="px-6 py-4 text-gold font-bold border-r border-beige/30">{row.fiyat}</td>
+                    </>
+                  )}
                 </tr>
               ));
             })}
