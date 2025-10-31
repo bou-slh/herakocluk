@@ -120,10 +120,10 @@ function PricingTable({ exam }: { exam: ExamPricing }) {
         <table className="w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-beige/30 overflow-hidden">
           <thead>
             <tr className="bg-gradient-to-r from-navy to-navy/90 text-cream">
-              <th className="px-6 py-4 text-left font-semibold">Paket</th>
-              <th className="px-6 py-4 text-left font-semibold">Süre</th>
-              <th className="px-6 py-4 text-left font-semibold">Fiyat (₺)</th>
-              <th className="px-6 py-4 text-left font-semibold">İçerik Özeti</th>
+              <th className="px-6 py-4 text-left font-semibold w-[20%]">Paket</th>
+              <th className="px-6 py-4 text-left font-semibold w-[15%]">Süre</th>
+              <th className="px-6 py-4 text-left font-semibold w-[15%]">Fiyat (₺)</th>
+              <th className="px-6 py-4 text-left font-semibold w-[50%]">İçerik Özeti</th>
             </tr>
           </thead>
           <tbody>
@@ -147,10 +147,10 @@ function PricingTable({ exam }: { exam: ExamPricing }) {
                       <td className="px-6 py-4 text-navy/90 border-r border-beige/30">{row.sure}</td>
                       <td className="px-6 py-4 text-gold font-bold border-r border-beige/30">{row.fiyat}</td>
                       <td
-                        className="px-6 py-4 text-navy/80 text-sm border-r border-beige/30"
+                        className="px-6 py-4 text-navy/80 text-sm border-r border-beige/30 whitespace-pre-line min-h-[80px]"
                         rowSpan={packageRows.length}
                       >
-                        {row.icerik}
+                        {row.icerik.split(' + ').join('\n')}
                       </td>
                     </>
                   ) : (
