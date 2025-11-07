@@ -11,6 +11,19 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- ✅ Hidden static form for Netlify to detect -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="text" name="exam" />
+      <input type="text" name="isStudent" />
+      <input type="text" name="studentGrade" />
+      <input type="text" name="city" />
+      <input type="text" name="phone" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
