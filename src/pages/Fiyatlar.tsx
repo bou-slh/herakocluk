@@ -112,9 +112,9 @@ function PricingTable({ exam }: { exam: ExamPricing }) {
         
         {exam.title}
       </h3>
-      <p className="text-navy/70 mb-6 text-sm">
+      {/* <p className="text-navy/70 mb-6 text-sm">
         (Sayısal / Sözel / Eşit Ağırlık / Dil için geçerlidir)
-      </p>
+      </p> */}
 
       <div className="overflow-x-auto">
         <table className="w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-beige/30 overflow-hidden">
