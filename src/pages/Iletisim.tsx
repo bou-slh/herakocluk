@@ -28,29 +28,48 @@ export default function Iletisim() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const encode = (data: any) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact",
+        ...formData,
+      }),
+    });
+
+    setSubmitStatus("success");
+    setFormData({
+      fullName: "",
+      exam: "",
+      isStudent: "",
+      studentGrade: "",
+      city: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    setSubmitStatus("error");
+  } finally {
+    setIsSubmitting(false);
 
     setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({
-        fullName: '',
-        exam: '',
-        isStudent: '',
-        studentGrade: '',
-        city: '',
-        phone: '',
-        email: '',
-        message: '',
-      });
+      setSubmitStatus("idle");
+    }, 5000);
+  }
+};
 
-      setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 5000);
-    }, 1000);
-  };
 
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/905515332633', '_blank');
