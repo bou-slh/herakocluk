@@ -84,32 +84,35 @@ export default function Footer() {
             </div>
           </div>
         </div>
-         <div className="border-t border-gold/20 pt-8">
-          {/* Payment logos: place the provided PNG in `public/payment-logos.png` */}
-          <div className="flex justify-center md:justify-end mb-4">
-            <img
-              src="/payment-logos.png"
-              alt="Visa and MasterCard"
-              className="h-8 md:h-8 object-contain"
-            />
-          </div>
-          </div>
+        
 
-       
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center flex-wrap gap-4 text-cream/60 text-sm">
-              <p>© {currentYear} Hera Koçluk. Tüm hakları saklıdır.</p>
-              <div className="flex items-center gap-4">
-                <Link to="/gizlilik-politikasi" className="hover:text-gold transition-colors">
-                  Gizlilik Politikası
-                </Link>
-                <span>•</span>
-                <Link to="/cerez-politikasi" className="hover:text-gold transition-colors">
-                  Çerez Politikası
-                </Link>
+        <div className="border-t border-gold/20 pt-8">
+         
+         
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="flex flex-col">
+              <div className="flex items-center flex-wrap gap-4 text-cream/60 text-sm">
+                <p>© {currentYear} Hera Koçluk. Tüm hakları saklıdır.</p>
+                <div className="flex items-center gap-4">
+                  <Link to="/gizlilik-politikasi" className="hover:text-gold transition-colors">
+                    Gizlilik Politikası
+                  </Link>
+                  <span>•</span>
+                  <Link to="/cerez-politikasi" className="hover:text-gold transition-colors">
+                    Çerez Politikası
+                  </Link>
+                </div>
+              </div>
+
+              {/* Payment logos placed one line below the copyright/policies */}
+              <div className="mt-2 flex justify-start md:justify-start">
+                <img
+                  src="/payment-logos.png"
+                  alt="Visa and MasterCard"
+                  className="h-8 md:h-8 object-contain"
+                />
               </div>
             </div>
-            
 
             <div className="flex gap-4">
               <a
@@ -148,8 +151,11 @@ export default function Footer() {
               >
                 <Linkedin size={20} className="text-cream/70 group-hover:text-gold transition-colors" />
               </a>
+    
             </div>
+          </div>
         </div>
+        
       </div>
     </footer>
   );
