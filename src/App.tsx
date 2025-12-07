@@ -7,6 +7,7 @@ import Fiyatlar from './pages/Fiyatlar';
 import Iletisim from './pages/Iletisim';
 import CerezPolitikasi from './pages/CerezPolitikasi';
 import GizlilikPolitikasi from './pages/GizlilikPolitikasi';
+import MesafeliSatisSozlesmesi from './pages/MesafeliSatisSozlesmesi';
 
 function ScrollHandler() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function AppContent() {
         <Route path="/iletisim" element={<Iletisim />} />
         <Route path="/cerez-politikasi" element={<CerezPolitikasi />} />
         <Route path="/gizlilik-politikasi" element={<GizlilikPolitikasi />} />
+        <Route path="/mesafeli-satis-sozlesmesi" element={<MesafeliSatisSozlesmesi />} />
       </Routes>
       <Footer />
     </div>

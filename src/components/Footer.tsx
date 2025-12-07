@@ -101,6 +101,10 @@ export default function Footer() {
                   <Link to="/cerez-politikasi" className="hover:text-gold transition-colors">
                     Çerez Politikası
                   </Link>
+                  <span>•</span>
+                  <Link to="/mesafeli-satis-sozlesmesi" className="hover:text-gold transition-colors">
+                    Mesafeli Satış Sözleşmesi
+                  </Link>
                 </div>
               </div>
 
